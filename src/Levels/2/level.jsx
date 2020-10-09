@@ -57,17 +57,17 @@ export default class Level2 extends React.Component {
         return new Promise(resolve => setTimeout(resolve, ms));
       }
 
-    loop1 = async () => {
-        for(var i=0;i<ROWS*COLUMNS-1;i++){
-                await this.sleep(25);
-                //console.log('updating: ', i);
-                var el = document.getElementById('circle-' + i);
-                var n = Number(el.innerHTML) + 1;
-                if(n === 2) n = 0;
-                el.innerHTML = n;
-            //}, 100000 / (ROWS*COLUMNS) + i);
-        }
-    }
+    // loop1 = async () => {
+    //     for(var i=0;i<ROWS*COLUMNS-1;i++){
+    //             await this.sleep(25);
+    //             //console.log('updating: ', i);
+    //             var el = document.getElementById('circle-' + i);
+    //             var n = Number(el.innerHTML) + 1;
+    //             if(n === 2) n = 0;
+    //             el.innerHTML = n;
+    //         //}, 100000 / (ROWS*COLUMNS) + i);
+    //     }
+    // }
 
     // Steve Reich loop
     loopGroup = () => {

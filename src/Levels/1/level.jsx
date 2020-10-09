@@ -3,7 +3,7 @@ import Square from './square.jsx';
 import './level.css';
 
 //36 * 18
-const COLUMNS = 3; 
+const COLUMNS = 4; 
 const ROWS = 1;
 export default class Level2 extends React.Component {
     constructor(props){
@@ -11,7 +11,7 @@ export default class Level2 extends React.Component {
         this.state = {
             circles: [],
             yy: [],
-            odd_x: 2,
+            odd_x: 3,
             odd_y: 0
         }
     }

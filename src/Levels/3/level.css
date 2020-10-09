@@ -5,6 +5,34 @@
     position: absolute;
 }
 
+.lvl3img {
+    width: 4.5vw;
+    height: 11.5vh;
+    /* height: 250px; */
+}
+
+#lvl3img0-0 {
+    filter: blur(3.5px);
+}
+
+#lvl3img0-1 {
+    filter: contrast(250%);
+}
+
+#lvl3img0-2 {
+    filter: grayscale(50%);
+}
+#lvl3img0-3 {
+    filter: hue-rotate(10deg);
+}
+#lvl3img0-4 {
+    filter: saturate(200%);
+}
+#lvl3img1-0 {
+    filter: sepia(100%);
+}
+
+
 
 @keyframes fadeout {
     0% {

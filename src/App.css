@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap');
+
 .App {
   text-align: center;
   background-color: black;
   height: 100vh;
   overflow: hidden;
-  /* cursor: pointer; */
-  cursor: default;
+  cursor: pointer;
+  /* cursor: default; */
 }
 
 .App.nocursor {
@@ -13,7 +15,7 @@
 
 * {
   overflow: hidden;
-  
+  font-family: 'Open Sans', sans-serif;
 }
 
 .App-logo {
@@ -51,15 +53,34 @@
   }
 }
 
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  pointer-events: none;
+  background-color: black;
+  transition: opacity 125ms linear;
+}
+
+.overlay.showing {
+  opacity: 1;
+}
+
 #wrongCount-container {
   position: absolute;
   color: white;
   font-size: 3rem;
   width: fit-content;
   height: fit-content;
-  left: 1vw;
-  top: 1vh;
-  font-weight: 800;
+  /* left: 1vw; */
+  /* top: 1vh; */
+  left: 25px;
+  top: 15px;
+  font-weight: 600;
+  letter-spacing: .25rem;
   /* background-color: black; */
   z-index: 2;
   pointer-events: none;

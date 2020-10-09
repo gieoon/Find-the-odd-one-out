@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../Shape/shape.css';
 console.log(window.innerWidth);
-const SIZE = window.innerWidth / 3 + "px"
+const SIZE = window.innerWidth / 4 + "px"
 const RED = "rgb(245, 93, 66)";
 const GREEN = "rgb(129, 222, 137)";
 const BLUE = "rgb(115, 121, 237)";
@@ -30,7 +30,7 @@ export default class Square extends React.Component {
             this.setState({
                 currentIndex: i
             });
-        }, 2500);
+        }, 2000);
     }
 
     render(){

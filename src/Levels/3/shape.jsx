@@ -1,8 +1,9 @@
 import React from 'react';
 import '../../Shape/shape.css';
+import stockphoto from '../../assets/zigario.jpg';
 
 const SIZE = "32px" // 10 // 20
-export default class Square extends React.Component {
+export default class Shape extends React.Component {
     constructor(props){
         super(props)
         this.state = {
@@ -25,6 +26,30 @@ export default class Square extends React.Component {
         }
     }
 
+    componentDidMount(){
+        // Get one random CSS filter
+        
+    }
+
+    getRandomFilter(str){
+        var r = getRandomInt(6) + 1;
+        var str = str || '';
+        switch(r){
+            //case 0: return {filter: `brightness(${getRandomInt(100)}%)`};
+            case 1: str += ` contrast(${getRandomInt(200)+100}%)`;
+            case 2: str +=` grayscale(${getRandomInt(200)}%)`;
+            case 3: str += ` hue-rotate(${getRandomInt(360)}deg)`;
+            case 4: str += ` invert(${getRandomInt(20)}%)`;
+            case 5: str += ` sepia(${getRandomInt(300)}%)`;
+            case 6: str += ` saturate(${getRandomInt(300)}%)`;
+        }
+        if(getRandomInt(2) === 0)
+            return {filter: str};
+        else {
+            return this.getRandomFilter(str);
+        }
+    }
+
     render(){
         return(
             <div 
@@ -34,19 +59,20 @@ export default class Square extends React.Component {
                     // else 
                     //     this.props.f_wrong();
                 }}
+            //this.state.b_odd
                 className="shape-square" 
                 style={{
-                    backgroundColor: `${this.state.b_odd ? this.state.oddColor : this.state.color}`,
-                    width: `${this.state.width}`,
-                    height: `${this.state.height}`,
+                    width: "fit-content",
+                    height: "fit-content",
                     top: `${this.state.top}`,
                     left: `${this.state.left}`,
-                    opacity: `${this.state.b_odd ? 1 : this.state.opacity}`,
-                    animationDelay: `${getRandomInt(5000) + 'ms'}`,
-                    animationDuration: `${!this.state.b_odd ? getRandomInt(20000) + 1000 + 'ms' : ""}`,
-                    animationName: `${!this.state.b_odd ? "fadeout" : ""}`
+                    // margin: "6px"
                 }}
             >
+                <img style={
+                    this.state.b_odd ? {} : this.getRandomFilter()
+                }
+                    src={stockphoto} className="lvl3img" id={this.props.id} />
             </div>
         );
     }
@@ -55,6 +81,3 @@ export default class Square extends React.Component {
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
   }
-
-  //width: "32px",
-  //height: "32px",

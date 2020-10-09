@@ -25,36 +25,28 @@ export default class Square extends React.Component {
     }
 
     componentDidMount(){
-        //setTimeout(()=>{
-            // count++;
-            //     if(count === 2)
-            //         count = 0
-            //     // else if(count === 2)                
-            //     //     count = -1;
-            //     document.getElementById(this.props.id).innerHTML = count;
-            // setInterval(()=>{
-            //     count++;
-            //     if(count === 2)
-            //         count = 0
-            //     // else if(count === 2)                
-            //     //     count = -1;
-            //     document.getElementById(this.props.id).innerHTML = count;
-            //     // this.setState({
-            //     //     currentNumber: count
-            //     // });
-            // }, this.getAnimationSpeed());
-        //}, this.props.index * 10);
-       
+        // setTimeout(()=>{
+        //     var count=0;
+        //     setInterval(()=>{
+        //         count++;
+        //         if(count === 2)
+        //             count = 0;
+        //         // else if(count === 2)                
+        //         //     count = -1;
+        //         document.getElementById(this.props.id).innerHTML = this.getString(count);
+        //     }, this.getAnimationSpeed());
+        // }, 2000);
+    }
+
+    getString(count){
+        switch(count){
+            case 0: return '❤️';
+            case 1: return '💔';
+        }
     }
 
     getAnimationSpeed(){
-        if(this.props.column < 33){
-            return 100;
-        } else if(this.props.column < 67){
-            return 101;
-        } else {
-            return 102;
-        }
+        return 5000;
     }
 
     render(){
@@ -77,7 +69,7 @@ export default class Square extends React.Component {
                     animationDuration: `${this.getAnimationSpeed() + 'ms'}`,
                     animationName: `${this.state.b_odd ? "updateOdd" : "update"}`
                 }}
-            >
+            >|
                 {/* {this.props.count % 2 == 0 ? 1 : 0} */}
             </div>
         );

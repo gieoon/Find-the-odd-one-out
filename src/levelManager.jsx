@@ -16,7 +16,7 @@ export default class LevelManager extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            currentLevel: 1, //0
+            currentLevel: 0,
             wrongCount: 0,
             b_wrongCountVisible: false,
             c_x: 1,
@@ -56,9 +56,12 @@ export default class LevelManager extends React.Component {
     }
 
     f_nextLevel = () => {
-        this.setState({
-            currentLevel: this.state.currentLevel + 1
-        })
+        setTimeout(()=>{
+            this.setState({
+                currentLevel: this.state.currentLevel + 1
+            })
+        }, 1000);
+        this.trigger_overlay();
     }
 
     f_wrong = () => {
@@ -95,6 +98,14 @@ export default class LevelManager extends React.Component {
         // })
     }
 
+    trigger_overlay = () => {
+        const overlay = document.getElementById('overlay');
+        overlay.classList.add('showing')
+        setTimeout(()=>{
+            overlay.classList.remove('showing');
+        }, 1000);
+    }
+
     render(){
         return(
             <div 
@@ -110,6 +121,7 @@ export default class LevelManager extends React.Component {
                 {
                     this.getLevel()
                 }
+                <div id="overlay" className="overlay" />
             </div>
         )
     }
