@@ -1,6 +1,5 @@
 import React from 'react';
 import '../../Shape/shape.css';
-console.log(window.innerWidth);
 const SIZE = window.innerWidth / 4 + "px"
 const RED = "rgb(245, 93, 66)";
 const GREEN = "rgb(129, 222, 137)";

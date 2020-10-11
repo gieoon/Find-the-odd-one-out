@@ -78,7 +78,7 @@ export default class Square extends React.Component {
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
-  }
+}
 
   //width: "32px",
   //height: "32px",

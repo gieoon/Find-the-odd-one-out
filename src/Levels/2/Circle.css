@@ -1,0 +1,71 @@
+.circle-wrapper {
+    position: absolute;    
+    left: 150px;
+    top: 150px;
+}
+
+@keyframes moveUp {
+    0% {
+        margin-top: 0%;
+    }
+    50% {
+        margin-top: 100px;
+    }
+    100% {
+        margin-top: 0%;
+    }
+}
+
+@keyframes moveDown {
+    0% {
+        margin-bottom: 0%;
+    }
+    50% {
+        margin-bottom: 100px;
+    }
+    100% {
+        margin-bottom: 0%;
+    }
+}
+
+
+@keyframes moveRight {
+    0% {
+        right: 0%;
+    }
+    50% {
+        right: 100px;
+    }
+    100% {
+        right: 0%;
+    }
+}
+
+
+
+@keyframes moveLeft {
+    0% {
+        margin-left: 0%;
+    }
+    50% {
+        margin-left: 100px;
+    }
+    100% {
+        margin-left: 0%;
+    }
+}
+
+.circle-wrapper-inner {
+    position: relative; 
+    animation-duration: infinite;   
+}
+
+.Circle {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    
+}
+

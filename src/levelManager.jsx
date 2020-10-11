@@ -16,7 +16,7 @@ export default class LevelManager extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            currentLevel: 0,
+            currentLevel: 2,
             wrongCount: 0,
             b_wrongCountVisible: false,
             c_x: 1,
